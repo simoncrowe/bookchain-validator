@@ -25,4 +25,6 @@ WORKDIR /app
 
 ENV PYTHONPATH=/app
 
+EXPOSE 8008
+
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord/supervisord.conf"]

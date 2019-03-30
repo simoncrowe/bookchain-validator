@@ -13,7 +13,7 @@ COPY ./requirements.txt /app/requirements.txt
 
 RUN pip install --upgrade pip && \
     pip install -r /app/requirements.txt && \
-    python -m spacy download en_core_web_sm \
+    python -m spacy download en_core_web_sm  && \
     pip install gunicorn
 
 

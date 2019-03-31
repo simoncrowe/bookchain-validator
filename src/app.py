@@ -18,7 +18,7 @@ app.config.from_pyfile('settings.cfg')
 @app.route('/greeting', methods=['post'])
 @use_kwargs(
     {
-        'latest_block_text': fields.Str(required=True, allow_none=False),
+        'latest_block_text': fields.Str(missing=None),
     }
 )
 def message(latest_block_text):
@@ -38,7 +38,7 @@ def message(latest_block_text):
 @use_kwargs(
     {
         'proposed_block_text': fields.Str(required=True, allow_none=False),
-        'latest_block_text': fields.Str(required=True, allow_none=False),
+        'latest_block_text': fields.Str(missing=None),
     }
 )
 def validate(proposed_block_text, latest_block_text):
@@ -64,4 +64,4 @@ def validate(proposed_block_text, latest_block_text):
 
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run(port=8008)

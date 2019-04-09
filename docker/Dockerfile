@@ -4,7 +4,6 @@ RUN apt-get update && \
     apt-get install -y \
         build-essential \
         libssl-dev \
-        nginx \
         supervisor && \
         mkdir /run/nginx  && \
         mkdir /var/log/gunicorn
@@ -17,8 +16,6 @@ RUN pip install --upgrade pip && \
     pip install gunicorn
 
 
-
-COPY ./docker/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker/supervisord.conf /etc/supervisord/supervisord.conf
 
 WORKDIR /app
